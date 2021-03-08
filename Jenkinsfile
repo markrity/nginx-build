@@ -30,7 +30,7 @@ pipeline {
 
         stage('Apply Kubernetes files') {
             steps{
-            withKubeConfig([credentialsId: 'jenkins-robot', serverUrl: 'https://35.184.84.132']) {
+            withKubeConfig([credentialsId: 'candidate-sa', serverUrl: 'https://35.184.84.132']) {
             sh 'kubectl apply -f deployment.yaml'
             }
             }
