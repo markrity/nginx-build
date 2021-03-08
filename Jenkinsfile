@@ -1,7 +1,7 @@
 pipeline { 
     environment { 
         registry = "markdavydov/nginx_build_number" 
-        registryCredential = 'dockerhub_broadcom' 
+        registryCredential = 'dockerhub-login' 
         dockerImage = '' 
     }
     agent any 
