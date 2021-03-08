@@ -15,7 +15,7 @@ pipeline {
             steps { 
                 script { 
                     //dockerImage = docker.build registry + ":$BUILD_NUMBER" 
-                    docker.build("$registry:${env.BUILD_NUMBER}", "--build-arg BUILD_NUMBER=$BUILD_NUMBER .")
+                    dockerImage = docker.build("$registry:${env.BUILD_NUMBER}", "--build-arg BUILD_NUMBER=$BUILD_NUMBER .")
                 }
             } 
         }
@@ -32,7 +32,7 @@ pipeline {
         stage('Apply Kubernetes files') {
             steps{
             withKubeConfig([credentialsId: 'candidate-sa', serverUrl: 'https://35.184.84.132']) {
-            sh 'kubectl apply -f deployment.yaml'
+            sh 'cat deployment.yaml | sed "s/{{BUILD_NUMBER}}/$BUILD_NUMBER/g" | kubectl apply -f -'
             }
             }
         }

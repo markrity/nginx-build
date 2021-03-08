@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: markdavydov/nginx_build_number:666
+        image: markdavydov/nginx_build_number:{{BUILD_NUMBER}}
         ports:
         - containerPort: 80
