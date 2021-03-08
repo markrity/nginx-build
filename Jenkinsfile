@@ -1,14 +1,14 @@
 pipeline { 
     environment { 
-        registry = "YourDockerhubAccount/YourRepository" 
-        registryCredential = 'dockerhub_id' 
+        registry = "markdavydov/nginx_build_number" 
+        registryCredential = 'dockerhub_broadcom' 
         dockerImage = '' 
     }
     agent any 
     stages { 
         stage('Cloning our Git') { 
             steps { 
-                git 'https://github.com/YourGithubAccount/YourGithubRepository.git' 
+                git 'https://github.com/markrity/nginx-build.git' 
             }
         } 
         stage('Building our image') { 
