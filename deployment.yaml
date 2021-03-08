@@ -19,3 +19,4 @@ spec:
         image: markdavydov/nginx_build_number:{{BUILD_NUMBER}}
         ports:
         - containerPort: 80
+        

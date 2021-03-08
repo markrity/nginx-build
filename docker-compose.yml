@@ -13,3 +13,4 @@ services:
       - /usr/bin/docker:/usr/bin/docker
       - /usr/local/bin/kubectl:/usr/bin/kubectl
     restart: always
+    

@@ -54,5 +54,3 @@ Could be done with HELM, but it would require creating helm-chart and adding hel
 
 
 Fin. Total time 3h.
-
-
